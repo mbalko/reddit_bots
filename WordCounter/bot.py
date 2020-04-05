@@ -44,7 +44,7 @@ def main():
     with open("checked.txt", "r") as f:
         checked = f.read().split()
 
-    submissions = [x for x in reddit.redditor(config.bot_redditor).submissions.new(limit = 3) if x.subreddit.display_name in config.bot_subreddit and x.id not in checked and datetime.now() - datetime.fromtimestamp(x.created_utc) >= timedelta(hours = config.bot_post_age_hours)]
+    submissions = [x for x in reddit.redditor(config.bot_redditor).submissions.new(limit = 20) if x.subreddit.display_name in config.bot_subreddit and x.id not in checked and datetime.now() - datetime.fromtimestamp(x.created_utc) >= timedelta(hours = config.bot_post_age_hours)]
     print_log("There's {} submissions to look at.".format(len(submissions)))
 
     for submission in submissions:
