@@ -1,6 +1,6 @@
 ### CommentVote
 
-[screenshot](screenshot.png)
+![screenshot](screenshot.png)
 
 Simple vote system through comments. The bot comments on each submission with matching `bot_flair` (set in `config.py`) and updates the comment as redditors vote through replies on the comment.
 
